@@ -31,7 +31,6 @@ public class AutorController {
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(autorModel.getId()).toUri();
         return ResponseEntity.created(uri).body(requeste);
     }
-
     @GetMapping
     public Optional<AutorModel> findAll(@PathVariable Long id){
         return autorService.findById(id);
